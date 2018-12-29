@@ -1,0 +1,17 @@
+.radio-options{
+    padding: 5px;
+}
+
+.mat-card-subtitle:not(:first-child), .mat-card-title:not(:first-child){
+    margin-top: 0px;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
