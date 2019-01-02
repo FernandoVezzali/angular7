@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Question } from 'src/model/question.model';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-app';
 
-  list: Object[] = [];
+  list: Question[] = [];
 
   constructor() {
 
@@ -23,27 +24,11 @@ export class AppComponent {
     yesNo.push(['1', 'Sim']);
     yesNo.push(['2', 'Não']);
 
-    this.addItem('Nossa comunicação:', 'Como qualificaria a comunicação e a informação no website antes do evento?', multipleChoises);
-    this.addItem('Localização:', 'Como qualificaria o local do evento?', multipleChoises);
-    this.addItem('Credenciamento:', 'Como qualificaria a área de credenciamento?', multipleChoises);
-    this.addItem(undefined, 'Voltaria a participar em um evento com esta temática?', yesNo);
-  }
+    const q1: Question = { id: 1, title: 'Nossa comunicação:', subTitle: 'Como qualificaria a comunicação e a informação no website antes do evento?', choises: multipleChoises };
+    const q2: Question = { id: 2, title: 'Localização:', subTitle: 'Como qualificaria o local do evento?', choises: multipleChoises };
+    const q3: Question = { id: 3, title: 'Credenciamento:', subTitle: 'Como qualificaria a área de credenciamento?', choises: multipleChoises };
+    const q4: Question = { id: 4, title: 'Nossa comunicação:', subTitle: 'Como qualificaria a comunicação e a informação no website antes do evento?', choises: yesNo };
 
-  addItem(title: string, subTitle: string, choises: string[][]) {
-
-    this.list.push({
-      'title': title,
-      'subTitle': subTitle,
-      'choises': choises
-    });
-
-    /*
-    (this._randomIndex(), 0, {
-      'letter': this._randomLetter(),
-      'number': this._randomNumber(),
-      'generation': this.generation,
-      'value': ''
-    });
-    */
+    this.list.push(q1, q2, q3, q4);
   }
 }
