@@ -24,8 +24,8 @@ export class AppComponent {
     yesNo.push(['1', 'Sim']);
     yesNo.push(['2', 'Não']);
 
-    const q1: Question = { id: 1, title: 'Nossa comunicação:',
-    subTitle: 'Como qualificaria a comunicação e a informação no website antes do evento?',
+    const q1: Question = { id: 1, title: 'Comunicação:',
+    subTitle: 'Como qualificaria a comunicação no website antes do evento?',
     choises: multipleChoises };
 
     const q2: Question = { id: 2, title: 'Localização:',
@@ -36,8 +36,8 @@ export class AppComponent {
     subTitle: 'Como qualificaria a área de credenciamento?',
     choises: multipleChoises };
 
-    const q4: Question = { id: 4, title: 'Nossa comunicação:',
-    subTitle: 'Como qualificaria a comunicação e a informação no website antes do evento?',
+    const q4: Question = { id: 4, title: 'Geral:',
+    subTitle: 'Voltaria a participar de um evento com esta temática?',
     choises: yesNo };
 
     this.list.push(q1, q2, q3, q4);
